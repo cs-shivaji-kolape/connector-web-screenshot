@@ -1,5 +1,5 @@
 from connectors.core.connector import Connector, ConnectorError, get_logger
-from .operations import take_screenshot, _check_health, operations
+from .operations import _check_health, operations
 
 logger = get_logger('web-screenshot')
 
