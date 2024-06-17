@@ -1,0 +1,97 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "46764d2a-af18-46f6-bd70-29f0f38e08b4",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Web Screenshot - 1.0.0",
+      "description": "Web Screenshot provides a service to take screenshot or thumbnail of any online web page in a couple of second.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Web",
+        "web-screenshot"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "7db723cf-d9be-4378-8f88-6bfd3c418e14",
+          "collection": "/api/3/workflow_collections/46764d2a-af18-46f6-bd70-29f0f38e08b4",
+          "triggerLimit": null,
+          "description": "Take a screenshot of a provided URL or web page",
+          "name": "Take Screenshot",
+          "tag": "#Web Screenshot",
+          "recordTags": [
+            "Web",
+            "web-screenshot"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/fbf5b64c-b7df-4334-9c19-6abf29c59d12",
+          "steps": [
+            {
+              "uuid": "fbf5b64c-b7df-4334-9c19-6abf29c59d12",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "9c3705fd-b418-443f-b4ca-fc533776b7f7",
+                "title": "Web Screenshot: Take Screenshot",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "a9932aeb-bd8e-4493-8739-21eca14b6356",
+              "@type": "WorkflowStep",
+              "name": "Take Screenshot",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Web Screenshot",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "web-screenshot",
+                "operation": "take_screenshot",
+                "operationTitle": "Take Screenshot",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ad1b63cc-1b46-4ecb-a550-6c8b570f9c78",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Take Screenshot",
+              "sourceStep": "/api/3/workflow_steps/fbf5b64c-b7df-4334-9c19-6abf29c59d12",
+              "targetStep": "/api/3/workflow_steps/a9932aeb-bd8e-4493-8739-21eca14b6356"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

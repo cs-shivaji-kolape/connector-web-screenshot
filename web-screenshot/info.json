@@ -2,25 +2,26 @@
   "name": "web-screenshot",
   "version": "1.0.0",
   "label": "Web Screenshot",
-  "description": "Native Screenshot Connector",
-  "publisher": "Community",
+  "description": "Web Screenshot provides a service to take screenshot or thumbnail of any online web page in a couple of second.",
+  "publisher": "Fortinet SE",
+  "contributor": "Semseddin Aksoy",
   "icon_small_name": "web-screenshot_small.png",
   "icon_large_name": "web-screenshot_large.png",
   "cs_approved": false,
   "cs_compatible": true,
-  "category": "investigation",
-  "help_online": "https://support.google.com/chrome",
+  "category": "Utilities",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-web-screenshot/blob/release/1.0.0/docs/WebScreenshotDoc.md",
   "configuration": {
     "fields": [
       {
-        "title": "path",
+        "title": "Path",
         "required": true,
         "editable": true,
         "visible": true,
         "type": "text",
-        "description": "Chrome binary path",
+        "description": "The Chrome binary path refers to the specific location on a computer's file system where the executable file for the Google Chrome web browser is stored",
+        "tooltip": "The Chrome binary path refers to the specific location on a computer's file system where the executable file for the Google Chrome web browser is stored",
         "name": "path",
-        "tooltip": "Set Chrome binary path",
         "value": "/usr/bin/google-chrome"
       },
       {
@@ -29,9 +30,10 @@
         "editable": true,
         "visible": true,
         "type": "integer",
-        "description": "Browser Width",
+        "description": "Specify a horizontal dimension of the viewport or window in which a web page is displayed within a web browser.",
+        "tooltip": "Specify a horizontal dimension of the viewport or window in which a web page is displayed within a web browser.",
+
         "name": "width",
-        "tooltip": "Browser Width",
         "value": "800"
       },
       {
@@ -40,9 +42,9 @@
         "editable": true,
         "visible": true,
         "type": "integer",
-        "description": "Browser Height",
+        "description": "Specify a vertical dimension of the viewport or window in which a web page is displayed within a web browser.",
+        "tooltip": "Specify a vertical dimension of the viewport or window in which a web page is displayed within a web browser.",
         "name": "height",
-        "tooltip": "Browser Height",
         "value": "600"
       },
       {
@@ -51,9 +53,9 @@
         "editable": true,
         "visible": true,
         "type": "integer",
-        "description": "Thumbnail Width",
+        "description": "Specify the horizontal measurement of a small image or preview of a larger images",
+        "tooltip": "Specify the horizontal measurement of a small image or preview of a larger images",
         "name": "t_width",
-        "tooltip": "Attachment Thumbnail Width",
         "value": "800"
       },
       {
@@ -62,9 +64,9 @@
         "editable": true,
         "visible": true,
         "type": "integer",
-        "description": "Thumbnail Height",
+        "description": "Specify a vertical measurement of a small image or preview of a larger images",
+        "tooltip": "Specify a vertical measurement of a small image or preview of a larger images",
         "name": "t_height",
-        "tooltip": "Attachment Thumbnail Height",
         "value": "600"
       }
     ]
@@ -73,7 +75,7 @@
     {
       "operation": "take_screenshot",
       "title": "Take Screenshot",
-      "description": "Visit URL and take screenshot with Chrome",
+      "description": "Take a screenshot of a provided URL or web page and store it in Fortinet Attachment.",
       "category": "investigation",
       "annotation": "take_screenshot",
       "parameters": [
@@ -82,9 +84,10 @@
           "required": true,
           "editable": true,
           "visible": true,
+          "description": "Specify the URL of the web page you want to take a screenshot of.",
+        "tooltip": "Specify the URL of the web page you want to take a screenshot of.",
           "type": "text",
-          "name": "url",
-          "description": "URL"
+          "name": "url"
         }
       ],
       "enabled": true,
